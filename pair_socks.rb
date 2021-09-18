@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# https://www.hackerrank.com/challenges/sock-merchant?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
 def sockMerchant(n, ar)
   # Write your code here
   hash_result = {}
