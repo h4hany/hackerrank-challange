@@ -2,14 +2,8 @@
 #https://www.hackerrank.com/challenges/acm-icpc-team/problem
 #  The first is the maximum number of topics known, and the second is the number of teams that know that number of topics.
 def bit_on_bit (topic, next_topic)
-  (topic.to_i(2) | next_topic.to_i(2)).to_s(2).split('').map(&:to_i).reduce(0, :+)
-  # result = 0
-  # topic.length.times do |index|
-  #   if topic[index] == '1' || next_topic[index] == '1'
-  #     result += 1
-  #   end
-  # end
-  # result
+  (topic.to_i(2) | next_topic.to_i(2)).to_s(2).count('1')
+
 end
 
 def debug_info(var_name, value)
