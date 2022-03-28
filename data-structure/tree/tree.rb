@@ -91,6 +91,10 @@ class Tree
     @root.right = temp
   end
 
+  def invert
+    @root = invert_rec(right)
+  end
+
   private
 
   class Node
@@ -101,6 +105,15 @@ class Tree
       @val = val
       @left, @right = nil, nil
     end
+  end
+
+  def invert_rec(root)
+    return root if root.nil?
+    left = invert_rec(root.left)
+    right = invert_rec(root.right)
+    root.left = right
+    root.right = left
+    root
   end
 
   # @param {Node} root
@@ -153,6 +166,6 @@ tree2 = tree_creator(nodes_val)
 # tree.in_order
 # puts tree.equal(tree2)
 # puts tree.is_binary_search_tree?
-puts tree.level_order
+puts tree.invert
 # n = tree.find(5)
 # puts n.left

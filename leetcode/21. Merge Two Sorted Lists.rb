@@ -12,10 +12,10 @@ end
 # @param {ListNode} list2
 # @return {ListNode}
 def merge_two_lists(list1, list2)
-  result = ListNode.new
   return list1 if list1.nil? && list2.nil?
   return list2 if list1.nil?
   return list1 if list2.nil?
+  result = ListNode.new
 
   if list1.val > list2.val
     result = list2
