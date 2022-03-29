@@ -1,4 +1,6 @@
-#!/user/bin/ruby
+# https://leetcode.com/problems/product-of-array-except-self/
+# @param {Integer[]} nums
+# @return {Integer[]}
 def product_except_self(nums)
   length = nums.length
   res = Array.new(length)
@@ -8,17 +10,10 @@ def product_except_self(nums)
   end
   product = 1
   index = length - 1
-  result = Array.new(length)
-  res_i = 0
   while index >= 0
     res[index] *= product
-    result[res_i] = res[index]
     product *= nums[index]
     index -= 1
-    res_i += 1
   end
-   result
+  res
 end
-
-nums = [1, 2, 3, 4]
-puts product_except_self(nums)

@@ -95,6 +95,14 @@ class Tree
     @root = invert_rec(right)
   end
 
+  def lowest_common_ancestor(root, p, q)
+    return root if root==p or root==q or (root.val > p.val and root.val < q.val) or (root.val < p.val and root.val > q.val)
+    if root.val > p.val
+      return lowest_common_ancestor(root.left,p,q)
+    else
+      return lowest_common_ancestor(root.right,p,q)
+    end
+  end
   private
 
   class Node
