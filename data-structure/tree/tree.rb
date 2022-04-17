@@ -36,7 +36,6 @@ class Tree
           break
         end
         current = current.right
-
       end
     end
   end

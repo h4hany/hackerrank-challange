@@ -23,7 +23,7 @@ module TrieTraverse
 
   def post_order_rec(root)
     root.get_children.each do |child|
-      pre_order_rec(child)
+      post_order_rec(child)
     end
     @result.push(root.val)
   end
